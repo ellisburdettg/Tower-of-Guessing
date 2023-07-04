@@ -1,0 +1,78 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local MainWindow = OrionLib:MakeWindow({Name = "[300 FLOORS!] Tower of Guessing", HidePremium = false, SaveConfig = true, IntroText = "Ellis Hub", ConfigFolder = "OrionTest"})
+local MainTab = MainWindow:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local CREDSTab = MainWindow:MakeTab({
+	Name = "Credits",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local MainSection = MainTab:AddSection({
+	Name = "Main"
+})
+local credsSection = CREDSTab:AddSection({
+	Name = "Credits"
+})
+
+MainSection:AddButton({
+	Name = "TP TO END!",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-459.128235, 9979.04688, 369.246307, -0.120261088, 1.15996563e-08, -0.9927423, -1.32894318e-08, 1, 1.32943443e-08, 0.9927423, 1.47917731e-08, -0.120261088)
+  	end    
+})
+
+local OtherSection = MainTab:AddSection({
+	Name = "Other"
+})
+
+OtherSection:AddSlider({
+	Name = "Slider",
+	Min = 16,
+	Max = 100,
+	Default = 16,
+    Color = Color3.fromRGB(128, 187, 219),
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+	end    
+})
+
+local GiveSection = MainTab:AddSection({
+	Name = "Give Tools"
+})
+
+GiveSection:AddButton({
+	Name = "GrappleHook",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Game.Winners.Givers.GrappleHook.Touch.CFrame
+        Wait(1)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-459.128235, 9979.04688, 369.246307, -0.120261088, 1.15996563e-08, -0.9927423, -1.32894318e-08, 1, 1.32943443e-08, 0.9927423, 1.47917731e-08, -0.120261088)
+        Wait(1)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 60
+    end      
+})
+
+GiveSection:AddButton({
+	Name = "Flying CARPET",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Game.Winners.Givers.Carpet.Touch.CFrame
+        Wait(2)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-459.128235, 9979.04688, 369.246307, -0.120261088, 1.15996563e-08, -0.9927423, -1.32894318e-08, 1, 1.32943443e-08, 0.9927423, 1.47917731e-08, -0.120261088)
+        Wait(2)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 60
+    end      
+})
+
+credsSection:AddButton({
+	Name = "ELLIS!",
+	Callback = function()
+    end      
+})
+
+OrionLib:Init()
